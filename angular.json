@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pokedex": {
+    "curso-angular-portifolio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,10 +24,8 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+                "src/favicon.ico",
+                "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -61,10 +59,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "pokedex:build:production"
+              "buildTarget": "curso-angular-portifolio:build:production"
             },
             "development": {
-              "buildTarget": "pokedex:build:development"
+              "buildTarget": "curso-angular-portifolio:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,10 +80,8 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+               "src/favicon.ico",
+               "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -94,5 +90,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "7a4bbcf7-5a80-4f0c-8a28-b59e257f6dad"
   }
 }
