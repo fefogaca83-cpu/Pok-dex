@@ -23,7 +23,7 @@ export class PokemonService {
   }
 
   async getDescricao(id: string | number): Promise<string> {
-    const res = await fetch(`https:pokeapi.co/api/v2/pokemon-species/${id}`);
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
     const resJson = await res.json();
     const texto = resJson.flavor_text_entries.find((texto: any) => texto.language.name === 'es');
     return texto.flavor_text;
