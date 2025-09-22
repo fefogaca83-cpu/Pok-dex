@@ -18,8 +18,11 @@ export class PokemonService {
   }
 
   async getById(id: string): Promise<Pokemon> {
+    console.log('🔍 Buscando pokemon ID:', id);
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    return await res.json();
+    const pokemon = await res.json();
+    console.log('✅ Pokemon encontrado:', pokemon.name, 'Altura:', pokemon.height, 'Peso:', pokemon.weight);
+    return pokemon;
   }
 
   async getDescricao(id: string | number): Promise<string> {

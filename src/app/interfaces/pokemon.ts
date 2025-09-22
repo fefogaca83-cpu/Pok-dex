@@ -332,6 +332,7 @@ export interface PastType {
 }
 
 export interface Pokemon {
+  descricao: any;
   id: number;
   name: string;
   base_experience: number;

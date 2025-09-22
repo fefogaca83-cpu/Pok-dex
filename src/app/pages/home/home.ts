@@ -58,7 +58,8 @@ export class Home implements OnInit {
   }
 
   this.pokemonSelecionado = await this.pokemonServise.getById(id);
-  }
+  
+}
 
   cambiarEstadoDetalle(){
     if(this.pokemonSelecionado)

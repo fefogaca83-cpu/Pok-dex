@@ -1,7 +1,7 @@
 [build]
   command = "ng build"
   publish = "dist/curso-angular-portifolio/browser"
-
+ 
 [build.environment]
   NODE_VERSION = "20"
 
