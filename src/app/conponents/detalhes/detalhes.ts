@@ -18,7 +18,7 @@ export class Detalhes implements OnChanges{
   @Input() combiarAberto = new EventEmitter();
   descricao: string = '';
    @Output() clickid = new EventEmitter<string>();
-   id: string = "0"
+   
 
   constructor(private pokemonService: PokemonService){};
   
