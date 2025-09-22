@@ -26,16 +26,20 @@ export class IdPokemon implements OnChanges {
   id: string = '0';
 
   extrairId() {
-    if (this.data && this.data.url !== "") {
-      this.id = this.data.url.substring(34, this.data.url.length-1);
-      return
-    }
-    if(this.fullData){
-      this.id = this.fullData.species.url.substring(42, this.fullData.species.url.length-1);
-      this.data = {
-        name: this.fullData.species.name,
-        url: ""
-      }
-    }
+  if (this.data && this.data.url !== "") {
+    this.id = this.data.url.substring(34, this.data.url.length-1);
+    return;
   }
+  if (this.fullData) {
+    // Extrai o ID da URL da species
+    const url = this.fullData.species.url;
+    const segments = url.split('/');
+    this.id = segments[segments.length - 2]; // Pega o penúltimo segmento
+    
+    this.data = {
+      name: this.fullData.name, // Use o nome do pokemon, não da species
+      url: ""
+    };
+  }
+}
 }
