@@ -1,38 +1,36 @@
-<div id="backdrop" [ngClass]="{escondido: !aberto}" (click)="clickid.emit()"></div>
+<div id="backdrop" [ngClass]="{ escondido: !aberto }" (click)="clickid.emit()"></div>
 <div id="container">
-    <div id="dados" *ngIf="pokemon">
-        <div class="area">
-            <app-id-pokemon
-                *ngIf="pokemon"
-                [fullData]="pokemon"
-                [seleccionado]="true">
-            </app-id-pokemon>
-        </div>
-        <div class="area">
-            <p>
-                <span class="etiqueta">Tipo</span>
-                <span class="tipo" *ngFor="let tipo of pokemon.types; trackBy: trackByType">{{tipo.type.name}}</span>
-            </p>
-            <p><span class="etiqueta">Altura</span>{{pokemon.height}} decímetros</p>
-            <p><span class="etiqueta">Peso</span>{{pokemon.weight}} hectogramas</p>
-        </div>
-        <div class="area">
-            <div id="descricaoContainer">
-                <div></div>
-                <p>{{descricao}}</p>
-                <div></div>
-            </div>
-        </div>
+  <div id="dados" *ngIf="pokemon">
+    <div class="area">
+      <app-id-pokemon *ngIf="pokemon" [fullData]="pokemon" [seleccionado]="true"> </app-id-pokemon>
     </div>
-    
-    <!-- Debug temporário - REMOVA depois que funcionar -->
-    <div style="background: red; color: white; padding: 10px;" *ngIf="pokemon">
-        <p>DEBUG: Pokemon existe: {{pokemon.name}}</p>
-        <p>DEBUG: ID: {{pokemon.id}}</p>
-        <p>DEBUG: Species URL: {{pokemon.species?.url}}</p>
+    <div class="area">
+      <p>
+        <span class="etiqueta">Tipo</span>
+        <ng-container *ngFor="let tipo of pokemon.types">
+          <span class="tipo">{{ tipo.type.name }}</span>
+        </ng-container>
+      </p>
+      <p><span class="etiqueta">Altura</span>{{ pokemon.height }} decímetros</p>
+      <p><span class="etiqueta">Peso</span>{{ pokemon.weight }} hectogramas</p>
     </div>
-    
-    <button (click)="clickid.emit()">
-        <img src="./../../../assets/flecha2.webp" alt="" [ngClass]="{girar: aberto}">
-    </button>
+    <div class="area">
+      <div id="descricaoContainer">
+        <div></div>
+        <p>{{ descricao }}</p>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Debug temporário - REMOVA depois que funcionar -->
+  <div style="background: red; color: white; padding: 10px" *ngIf="pokemon">
+    <p>DEBUG: Pokemon existe: {{ pokemon.name }}</p>
+    <p>DEBUG: ID: {{ pokemon.id }}</p>
+    <p>DEBUG: Species URL: {{ pokemon.species?.url }}</p>
+  </div>
+
+  <button (click)="clickid.emit()">
+    <img src="./../../../assets/flecha2.webp" alt="" [ngClass]="{ girar: aberto }" />
+  </button>
 </div>
