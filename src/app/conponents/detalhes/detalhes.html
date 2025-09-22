@@ -8,7 +8,7 @@
             </app-id-pokemon>
         </div>
         <div class="area">
-            <p><span class="etiqueta">Tipo</span><span class="tipo" *ngFor="let tipo of pokemon?.types">{{tipo.type.name}}</span></p>
+            <p><span class="etiqueta">Tipo</span><span class="tipo" *ngFor="let tipo of pokemon?.types | slice:0:2">{{tipo.type.name}}</span></p>
             <p><span class="etiqueta">Altura</span>{{pokemon?.height}} decímetros</p>
             <p><span class="etiqueta">Peso</span>{{pokemon?.weight}} hectogramas</p>
         </div>
