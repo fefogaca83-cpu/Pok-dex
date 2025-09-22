@@ -30,7 +30,10 @@ export class Detalhes implements OnChanges{
         
       }
     }
-      
+      // Adicione esta função para evitar duplicação
+  trackByType(index: number, tipo: any): any {
+    return tipo.type.name;
+  }
   
    
 }
