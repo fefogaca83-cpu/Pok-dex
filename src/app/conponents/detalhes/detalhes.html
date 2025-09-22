@@ -1,5 +1,5 @@
-<div id="backdrop" [ngClass]="{escondido: !aberto}" (click)="clickid.emit()"></div>
-<div id="container">
+<div id="backdrop" [ngClass]="{escondido: !aberto} " (click)="clickid.emit(id)"></div>
+<div id="container" >
     <div id="dados">
         <div class="area">
             <app-id-pokemon
