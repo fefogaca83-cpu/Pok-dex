@@ -11,7 +11,7 @@ import { Detalhes } from '../../conponents/detalhes/detalhes';
   standalone: true,
   imports: [CommonModule, FotoPokemon, IdPokemon, Detalhes],
   templateUrl: './home.html',
-  styleUrl: './home.scss',
+  styleUrls: ['./home.scss'],
 })
 export class Home implements OnInit {
   constructor(private pokemonServise: PokemonService) {}

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Resultado } from '../interfaces/pokeAPI';
 import { Pokemon } from '../interfaces/pokemon';
+import { CommonModule } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',

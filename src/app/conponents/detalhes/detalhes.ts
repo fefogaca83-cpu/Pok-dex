@@ -16,24 +16,17 @@ export class Detalhes implements OnChanges{
   @Input() pokemon?: Pokemon;
   @Input() aberto:boolean = false;
   @Input() combiarAberto = new EventEmitter();
+  @Output() clickid = new EventEmitter<string>();
   descricao: string = '';
-   @Output() clickid = new EventEmitter<string>();
    
 
   constructor(private pokemonService: PokemonService){};
   
     ngOnChanges(): void {
       if(this.pokemon){
-  this.pokemonService.getDescricao(this.pokemon?.id).then(res => {
+  this.pokemonService.getDescricao(this.pokemon?.id).then((res) => {
   this.descricao = res;
-        });
-        
+        });  
       }
     }
-      // Adicione esta função para evitar duplicação
-  trackByType(index: number, tipo: any): any {
-    return tipo.type.name;
-  }
-  
-   
 }

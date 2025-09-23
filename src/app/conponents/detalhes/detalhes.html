@@ -1,6 +1,6 @@
-<div id="backdrop" [ngClass]="{escondido: !aberto}" (click)="clickid.emit()"></div>
-<div id="container">
-    <div id="dados" *ngIf="pokemon">
+<div id="backdrop" [ngClass]="{escondido: !aberto} " (click)="clickid.emit()"></div>
+<div id="container" >
+    <div id="dados">
         <div class="area">
             <app-id-pokemon
                 [fullData]="pokemon"
@@ -8,13 +8,9 @@
             </app-id-pokemon>
         </div>
         <div class="area">
-            <p>
-                <span class="etiqueta">Tipo</span>
-                <span class="tipo">{{pokemon.types[0].type.name}}</span>
-                <span class="tipo" *ngIf="pokemon.types[1]">{{pokemon.types[1].type.name}}</span>
-            </p>
-            <p><span class="etiqueta">Altura</span>{{pokemon.height}} decímetros</p>
-            <p><span class="etiqueta">Peso</span>{{pokemon.weight}} hectogramas</p>
+            <p><span class="etiqueta">Tipo</span> <span class="tipo" *ngFor="let tipo of pokemon?.types">{{tipo.type.name}}</span></p>
+            <p><span class="etiqueta">Altura</span>{{pokemon?.height}} '</p>
+            <p><span class="etiqueta">Peso</span>{{pokemon?.weight}} lbs.</p>
         </div>
         <div class="area">
             <div id="descricaoContainer">
