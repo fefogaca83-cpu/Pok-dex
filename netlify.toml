@@ -1,6 +1,6 @@
 [build]
-  command = "ng build"
-  publish = "dist/pokedex"
+  command = "ng build --prod"
+  publish = "dist/curso-angular-portifolio/browser"
  
 [build.environment]
   NODE_VERSION = "20"
